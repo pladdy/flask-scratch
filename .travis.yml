@@ -1,0 +1,15 @@
+language: python
+
+dist: bionic
+
+python:
+  - "3.7"
+
+install:
+  - PIPENV_IGNORE_VIRTUALENVS=1 make
+
+script:
+  - make test
+
+after_success:
+  - poetry run codecov

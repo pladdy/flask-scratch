@@ -9,7 +9,7 @@ WHT = \033[1;37m
 
 TEST = PYTHONPATH=./ poetry run pytest tests -s -v
 
-all: dependencies
+all: poetry dependencies
 
 black:
 	black --exclude git --exclude venv ./

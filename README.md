@@ -12,6 +12,7 @@ Then `make`
 
 Below steps were run to set up project (these don't need to be re-run, only here for reference)
 ```
+brew install python # running on macOS Catalina, python3 is default
 pip install --upgrade pip
 pip install python-language-server[all] # for atom IDE plugin
 make dependencies # installs black and poetry

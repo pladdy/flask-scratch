@@ -15,4 +15,4 @@ script:
   - make test
 
 after_success:
-  - poetry run codecov
+  - make cov-reports && poetry run codecov

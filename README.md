@@ -28,40 +28,40 @@ poetry add flask
 
 ## Dependency References
 
-  - [Poetry](https://python-poetry.org/docs/)
+- [Poetry](https://python-poetry.org/docs/)
 
 ## Deployment
 
-  - [Example with uwsgi](https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx)
-  - [WSGI Servers/Deploy](https://www.fullstackpython.com/wsgi-servers.html)
+- [Example with uwsgi](https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx)
+- [WSGI Servers/Deploy](https://www.fullstackpython.com/wsgi-servers.html)
 
 ### Packaging/Distribution
 
-  - [Briefcase](https://beeware.org/project/projects/tools/briefcase/)
-  - [Nuitka](https://nuitka.net/)
-  - [PyInstaller](https://www.pyinstaller.org/)
-  - [PyOxidizer](https://pyoxidizer.readthedocs.io/en/latest/#)
+- [Briefcase](https://beeware.org/project/projects/tools/briefcase/)
+- [Nuitka](https://nuitka.net/)
+- [PyInstaller](https://www.pyinstaller.org/)
+- [PyOxidizer](https://pyoxidizer.readthedocs.io/en/latest/#)
 
 ## Flask Project
 
-  - [Flask Project](https://www.palletsprojects.com/p/flask/)
-  - [Flask Project Docs](https://flask.palletsprojects.com/en/1.1.x/)
-  - [Flask Github](https://github.com/pallets/flask)
-  - [Flask Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+- [Flask Project](https://www.palletsprojects.com/p/flask/)
+- [Flask Project Docs](https://flask.palletsprojects.com/en/1.1.x/)
+- [Flask Github](https://github.com/pallets/flask)
+- [Flask Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
 ## Misc References
 
-  - [FullStackPython Flask](https://www.fullstackpython.com/flask.html)
-  - [FullStackPython Flask Deploy](https://www.fullstackpython.com/deployment.html)
-  - [Pallets projects](https://palletsprojects.com/)
-  - [Python web frameworks](https://www.fullstackpython.com/web-frameworks.html)
-  - [Python web dev](https://www.fullstackpython.com/web-development.html)
+- [FullStackPython Flask](https://www.fullstackpython.com/flask.html)
+- [FullStackPython Flask Deploy](https://www.fullstackpython.com/deployment.html)
+- [Pallets projects](https://palletsprojects.com/)
+- [Python web frameworks](https://www.fullstackpython.com/web-frameworks.html)
+- [Python web dev](https://www.fullstackpython.com/web-development.html)
 
 ## Python
 
-  - [Python structure](https://docs.python-guide.org/writing/structure/)
-  - [Pytest](https://docs.pytest.org/en/latest/index.html)
-  - [Pytest Cov](https://pytest-cov.readthedocs.io/en/latest/index.html)
-  - [Kite](https://help.kite.com/article/60-using-the-atom-plugin)
-  - [WSGI (web server gateway interface, pronounced whiskey)](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
-    - [WSGI Docs](https://wsgi.readthedocs.io/en/latest/)
+- [Python structure](https://docs.python-guide.org/writing/structure/)
+- [Pytest](https://docs.pytest.org/en/latest/index.html)
+- [Pytest Cov](https://pytest-cov.readthedocs.io/en/latest/index.html)
+- [Kite](https://help.kite.com/article/60-using-the-atom-plugin)
+- [WSGI (web server gateway interface, pronounced whiskey)](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
+  - [WSGI Docs](https://wsgi.readthedocs.io/en/latest/)

@@ -1,5 +1,5 @@
 .PHONY: black cov-reports cover cover-codacy dependencies docs requirements.txt run
-.PHONY: docker-build docker-rebuild docker-run
+.PHONY: docker-build docker-clean docker-rebuild docker-run
 .PHONY: poetry poetry-win poetry-update
 .PHONY: test test-name test-with-cov
 
@@ -42,11 +42,14 @@ dependencies:
 docker-build: requirements.txt
 	docker build -t $(IMAGE_NAME) .
 
-docker-rebuild: requirements.txt
+docker-clean:
+	docker container rm $(CONTAINER_NAME)
+
+docker-rebuild: requirements.txt docker-clean
 	docker build --no-cache -t $(IMAGE_NAME) .
 
-docker-run: docker-build
-	docker run -d -p 5000:5000 flask-scratch --name $(CONTAINER_NAME)
+docker-run: docker-build docker-stop docker-clean
+	docker run --name $(CONTAINER_NAME) -d -p 5000:5000 flask-scratch
 
 docker-stop:
 	docker container stop $(CONTAINER_NAME)

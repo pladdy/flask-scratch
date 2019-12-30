@@ -69,6 +69,7 @@ Different resources used/referenced to set up the repo.
   - [Flask Project Docs](https://flask.palletsprojects.com/en/1.1.x/)
   - [Flask Github](https://github.com/pallets/flask)
   - [Flask Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+  - [Flask structure](https://www.patricksoftwareblog.com/structuring-a-flask-project/)
 
 ### Misc References
 

@@ -1,5 +1,7 @@
-.PHONY: dependencies cov-reports test test-name
+.PHONY: black cov-reports cover cover-codacy dependencies docs requirements.txt run
+.PHONY: docker-build docker-clean docker-rebuild docker-run
 .PHONY: poetry poetry-win poetry-update
+.PHONY: test test-name test-with-cov
 
 # colors for echos
 BLU = \033[0;36m
@@ -7,9 +9,11 @@ CYN = \033[1;36m
 NC= \033[0m
 WHT = \033[1;37m
 
+CONTAINER_NAME = flask-scratch-container
+IMAGE_NAME = flask-scratch:latest
 TEST = PYTHONPATH=./ poetry run pytest tests -s -v
 
-all: poetry dependencies
+all: poetry dependencies test
 
 black:
 	black --exclude git --exclude venv ./
@@ -21,11 +25,11 @@ cover: cov-reports
 	open htmlcov/index.html
 
 cover-codacy: cov-reports
-	source .env && python-codacy-coverage -r coverage.xml
+	source .env && poetry run python-codacy-coverage -r coverage.xml
 
 dependencies:
-	pip3 install black
-	pip3 install coverage
+	pip install black
+	pip install coverage
 	@echo
 	@echo "$(WHT)App dependencies are managed through '$(CYN)poetry$(WHT)'.$(NC)"
 	@echo "$(WHT)See '$(BLU)https://python-poetry.org/docs/$(WHT)' for poetry usage (to update app dependencies).$(NC)"
@@ -62,9 +66,12 @@ poetry-win:
 poetry-update:
 	poetry self update
 
+requirements.txt:
+	poetry export -f $@ > $@
+
 run:
 	@echo "$(WHT)Running app, '$(CYN)CTRL+C$(WHT)' to stop.$(NC)"
-	@env FLASK_APP=flask_scratch poetry run flask run
+	env FLASK_APP=flask_scratch.app poetry run flask run
 
 test:
 	$(TEST)

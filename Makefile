@@ -35,6 +35,21 @@ dependencies:
 	@echo "$(WHT)'$(CYN)poetry shell$(WHYT)' to start a shell.$(NC)"
 	@echo "$(WHT)'$(CYN)exit$(WHT)' to leave shell.$(NC)"
 
+docker-build: requirements.txt
+	docker build -t $(IMAGE_NAME) .
+
+docker-clean: docker-stop
+	docker container rm $(CONTAINER_NAME)
+
+docker-rebuild: requirements.txt docker-clean
+	docker build --no-cache -t $(IMAGE_NAME) .
+
+docker-run: docker-build docker-stop docker-clean
+	docker run --name $(CONTAINER_NAME) -d -p 5000:5000 flask-scratch
+
+docker-stop:
+	docker container stop $(CONTAINER_NAME)
+
 docs:
 	poetry run pdoc --html flask-scratch/ --force
 	open html/flask-scratch/index.html

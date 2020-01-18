@@ -9,6 +9,8 @@ CYN = \033[1;36m
 NC= \033[0m
 WHT = \033[1;37m
 
+POETRY_VERSION = 1.0.0
+
 CONTAINER_NAME = flask-scratch-container
 IMAGE_NAME = flask-scratch:latest
 TEST = PYTHONPATH=./ poetry run pytest tests -s -v
@@ -28,15 +30,14 @@ cover-codacy: cov-reports
 	source .env && poetry run python-codacy-coverage -r coverage.xml
 
 dependencies:
-	pip install black
-	pip install coverage
+	pip install black coverage setuptools
 	@echo
 	@echo "$(WHT)App dependencies are managed through '$(CYN)poetry$(WHT)'.$(NC)"
 	@echo "$(WHT)See '$(BLU)https://python-poetry.org/docs/$(WHT)' for poetry usage (to update app dependencies).$(NC)"
 	@echo
 	poetry install --no-root
 	@echo
-	@echo "$(WHT)'$(CYN)poetry shell$(WHYT)' to start a shell.$(NC)"
+	@echo "$(WHT)'$(CYN)poetry shell$(WHT)' to start a shell.$(NC)"
 	@echo "$(WHT)'$(CYN)exit$(WHT)' to leave shell.$(NC)"
 
 docker-build: requirements.txt
@@ -44,6 +45,7 @@ docker-build: requirements.txt
 
 docker-clean: docker-stop
 	docker container rm $(CONTAINER_NAME)
+	docker system prune
 
 docker-rebuild: requirements.txt docker-clean
 	docker build --no-cache -t $(IMAGE_NAME) .
@@ -60,13 +62,13 @@ docs:
 
 # https://python-poetry.org/docs/#installation
 poetry:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py | python
 poetry-win:
-	(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python
+	(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/$(POETRY_VERSION)/get-poetry.py -UseBasicParsing).Content | python
 poetry-update:
 	poetry self update
 
-requirements.txt:
+requirements.txt: poetry
 	poetry export -f $@ > $@
 
 run:

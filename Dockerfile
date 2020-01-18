@@ -4,7 +4,7 @@ ENV APP_DIR /opt/flask-scratch
 ENV FLASK_APP flask_scratch
 
 RUN set -eux; \
-  apt-get -y update; \
+  apt-get update; \
   apt-get install -y --no-install-recommends python3 python3-pip; \
   apt-get clean; \
   rm -rf /var/lib/apt/lists/*

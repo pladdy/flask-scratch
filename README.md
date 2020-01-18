@@ -36,17 +36,30 @@ To send reports to codacy a `.env` file has to be created with CODACY_PROJECT_TO
 
 Once `.env` file is set up with the correct token, `make cover-codacy` will generate coverage reports and send to codacy.
 
+## To Do
+
+  - [ ] Read [Flask docs](https://flask.palletsprojects.com/en/1.1.x/)
+  - [ ] Read [Flask Tutorial Code](https://github.com/pallets/flask/tree/master/examples/tutorial)
+  - [ ] Read [Pytest docs](https://docs.pytest.org/en/latest/index.html)
+  - [ ] Read [Pytest cov docs](https://pytest-cov.readthedocs.io/en/latest/index.html)
+
 ## References
 
 Different resources used/referenced to set up the repo.
 
-### Dependency References
+### Dependencies
 
+  - [Flask Project](https://www.palletsprojects.com/p/flask/)
+  - [Flask Project Docs](https://flask.palletsprojects.com/en/1.1.x/)
+  - [Flask Github](https://github.com/pallets/flask)
+  - [Flask Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+  - [Flask structure](https://www.patricksoftwareblog.com/structuring-a-flask-project/)
   - [Poetry](https://python-poetry.org/docs/)
 
 ### Deployment
 
   - [Example with uwsgi](https://www.digitalocean.com/community/tutorials/how-to-deploy-python-wsgi-applications-using-uwsgi-web-server-with-nginx)
+  - [Flask Deploy](https://www.fullstackpython.com/deployment.html)
   - [WSGI Servers/Deploy](https://www.fullstackpython.com/wsgi-servers.html)
 
 #### Packaging/Distribution
@@ -63,14 +76,6 @@ Different resources used/referenced to set up the repo.
   - [Digital Ocean Flask & Docker](https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04)
   - [Dev.to Docker](https://dev.to/riverfount/dockerize-a-flask-app-17ag)
 
-### Flask Project
-
-  - [Flask Project](https://www.palletsprojects.com/p/flask/)
-  - [Flask Project Docs](https://flask.palletsprojects.com/en/1.1.x/)
-  - [Flask Github](https://github.com/pallets/flask)
-  - [Flask Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-  - [Flask structure](https://www.patricksoftwareblog.com/structuring-a-flask-project/)
-
 ### Misc References
 
   - [FullStackPython Flask](https://www.fullstackpython.com/flask.html)
@@ -78,6 +83,7 @@ Different resources used/referenced to set up the repo.
   - [Pallets projects](https://palletsprojects.com/)
   - [Python web frameworks](https://www.fullstackpython.com/web-frameworks.html)
   - [Python web dev](https://www.fullstackpython.com/web-development.html)
+  - [Web Dev](https://www.fullstackpython.com/web-development.html)
 
 ### Python
 
@@ -87,3 +93,7 @@ Different resources used/referenced to set up the repo.
   - [Kite](https://help.kite.com/article/60-using-the-atom-plugin)
   - [WSGI (web server gateway interface, pronounced whiskey)](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
     - [WSGI Docs](https://wsgi.readthedocs.io/en/latest/)
+
+### Testing
+  - [Context locals](https://flask.palletsprojects.com/en/1.1.x/quickstart/#context-locals)
+    - for unit testing

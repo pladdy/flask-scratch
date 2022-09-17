@@ -6,10 +6,10 @@ python:
   - "3.9"
 
 before_install:
-  - pip install poetry
+  - curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.1.15 python3 -
 
 install:
-  - PIPENV_IGNORE_VIRTUALENVS=1 make
+  - PIPENV_IGNORE_VIRTUALENVS=1 make dependencies
 
 script:
   - make test

@@ -9,7 +9,7 @@ CYN = \033[1;36m
 NC= \033[0m
 WHT = \033[1;37m
 
-POETRY_VERSION = 1.0.0
+POETRY_VERSION = 1.1.15
 
 CONTAINER_NAME = flask-scratch-container
 IMAGE_NAME = flask-scratch:latest
@@ -25,9 +25,9 @@ cov-reports:
 
 cover: cov-reports
 	open htmlcov/index.html
-
 cover-codacy: cov-reports
 	source .env && poetry run python-codacy-coverage -r coverage.xml
+
 
 dependencies:
 	pip install black coverage setuptools
